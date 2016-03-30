@@ -365,7 +365,8 @@ DygraphCanvasRenderer._drawPointsOnLine = function(
   // added for the purposes of web platfrom: start
   var ctx = e.drawingContext;
   ctx.save();
-  for (var idx = pointsOnLine.length - 1; idx !== -1; --idx) {
+  var len = pointsOnLine.len;
+  for (var idx = 0; idx < len; ++idx) {
     drawPointCallback(e.dygraph, e.setName, ctx, pointsOnLine[idx], color, pointSize);
   }
   ctx.stroke();
